@@ -1,0 +1,15 @@
+services:
+  server:
+    build:
+      context: ./server
+    volumes:
+      - ${USER_WORKSPACE_PATH}:/usr/src/app/workspace
+    ports:
+      - "4000:4000"
+
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server

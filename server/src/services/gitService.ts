@@ -5,7 +5,8 @@ import path from "path";
 import { CommitDetail, RepoDetail } from "../types/types";
 import { promisify } from "util";
 
-export const getAllRepos = async (reposBasePath: string) => {
+export const getAllRepos = async () => {
+  const reposBasePath = "/usr/src/app/workspace";
   const repos: Array<{ name: string; path: string; branches: string[] }> = [];
 
   try {
@@ -59,6 +60,7 @@ export const openInEditorService = async (
     throw new Error("Failed to open code editor.");
   }
 };
+
 export const getRepositoryDetails = async (
   repoPath: string
 ): Promise<RepoDetail> => {

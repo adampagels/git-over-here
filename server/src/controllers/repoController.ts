@@ -7,11 +7,8 @@ import {
 import { OpenEditorRequest } from "../types/types";
 
 export const getRepos = async (req: Request, res: Response) => {
-  const { path } = req.params;
-  const repoPath = decodeURIComponent(path);
-
   try {
-    const repos = await getAllRepos(repoPath);
+    const repos = await getAllRepos();
     res.status(200).json(repos);
   } catch (error) {
     console.error("Error fetching repos:", error);

@@ -3,7 +3,7 @@ import cors from "cors";
 import repoRoutes from "./routes/repoRoutes";
 
 const app = express();
-const PORT = 8080;
+const PORT = 4000;
 
 const corsOptions = {
   origin: "http://localhost:3000",
